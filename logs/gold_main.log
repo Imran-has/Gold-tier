@@ -1,0 +1,150 @@
+2026-02-10 10:18:53,330 - gold.main - INFO - ============================================================
+2026-02-10 10:18:53,331 - gold.main - INFO - GOLD TIER AUTONOMOUS AI EMPLOYEE
+2026-02-10 10:18:53,333 - gold.main - INFO - ============================================================
+2026-02-10 10:18:53,336 - gold.main - INFO - Initializing components...
+2026-02-10 10:18:53,344 - gold.main - INFO - Initializing MCP servers...
+2026-02-10 10:18:53,344 - gold.main - INFO -   - Odoo MCP Server initialized
+2026-02-10 10:18:53,345 - gold.main - INFO -   - Social Media MCP Server initialized
+2026-02-10 10:18:53,347 - gold.main - INFO -   - Audit MCP Server initialized
+2026-02-10 10:18:53,348 - gold.main - INFO - Circuit breakers configured for external services
+2026-02-10 10:18:53,351 - gold.main - INFO - Registered 20 skills:
+2026-02-10 10:18:53,352 - gold.main - INFO -   - create_invoice (medium)
+2026-02-10 10:18:53,355 - gold.main - INFO -   - list_invoices (low)
+2026-02-10 10:18:53,356 - gold.main - INFO -   - record_expense (medium)
+2026-02-10 10:18:53,357 - gold.main - INFO -   - generate_financial_report (low)
+2026-02-10 10:18:53,358 - gold.main - INFO -   - reconcile_payments (high)
+2026-02-10 10:18:53,359 - gold.main - INFO -   - send_invoice (high)
+2026-02-10 10:18:53,360 - gold.main - INFO -   - post_to_facebook (medium)
+2026-02-10 10:18:53,361 - gold.main - INFO -   - post_to_instagram (medium)
+2026-02-10 10:18:53,362 - gold.main - INFO -   - post_to_twitter (medium)
+2026-02-10 10:18:53,363 - gold.main - INFO -   - post_to_linkedin (medium)
+2026-02-10 10:18:53,366 - gold.main - INFO -   - get_linkedin_analytics (low)
+2026-02-10 10:18:53,367 - gold.main - INFO -   - cross_post (medium)
+2026-02-10 10:18:53,370 - gold.main - INFO -   - get_social_analytics (low)
+2026-02-10 10:18:53,371 - gold.main - INFO -   - delete_social_post (high)
+2026-02-10 10:18:53,372 - gold.main - INFO -   - schedule_content (low)
+2026-02-10 10:18:53,373 - gold.main - INFO -   - run_weekly_audit (low)
+2026-02-10 10:18:53,374 - gold.main - INFO -   - generate_ceo_briefing (low)
+2026-02-10 10:18:53,375 - gold.main - INFO -   - compliance_check (low)
+2026-02-10 10:18:53,376 - gold.main - INFO -   - get_audit_logs (low)
+2026-02-10 10:18:53,377 - gold.main - INFO -   - system_health_check (low)
+2026-02-10 10:18:53,378 - gold.main - INFO - Initialization complete
+2026-02-10 10:18:53,381 - gold.main - INFO - Starting Gold Tier AI Employee...
+2026-02-10 10:18:53,385 - gold.gold_orchestrator - INFO - Starting Gold Tier Orchestrator...
+2026-02-10 10:18:53,388 - gold.ralph_wiggum_loop - INFO - Ralph Wiggum Loop started - I'm helping!
+2026-02-10 10:18:53,390 - gold.ralph_wiggum_loop - INFO - AUDIT: ralph_loop_started - success=True
+2026-02-10 10:18:53,394 - gold.gold_orchestrator - INFO - MCP server placeholders initialized
+2026-02-10 10:18:53,398 - gold.gold_orchestrator - INFO - AUDIT: orchestrator_started - success=True
+2026-02-10 10:18:53,402 - gold.gold_orchestrator - INFO - Gold Tier Orchestrator started successfully
+2026-02-10 10:18:53,404 - gold.main - INFO - Orchestrator started
+2026-02-10 10:18:53,405 - gold.mcp.odoo_mcp - WARNING - Odoo not configured - server starting in disconnected mode
+2026-02-10 10:18:53,406 - gold.main - INFO - MCP Server 'odoo' started
+2026-02-10 10:18:53,408 - gold.mcp.social_mcp - INFO - Social Media MCP server started
+2026-02-10 10:18:53,408 - gold.main - INFO - MCP Server 'social' started
+2026-02-10 10:18:53,412 - gold.mcp.audit_mcp - INFO - Audit MCP server started
+2026-02-10 10:18:53,414 - gold.mcp.audit_mcp - INFO - Weekly audit scheduled for sunday at 9:00
+2026-02-10 10:18:53,416 - gold.main - INFO - MCP Server 'audit' started
+2026-02-10 10:18:53,419 - gold.main - INFO - Gold Tier AI Employee is now running
+2026-02-10 10:18:53,420 - gold.main - INFO - 
+2026-02-10 10:18:53,424 - gold.main - INFO - ============================================================
+2026-02-10 10:18:53,426 - gold.main - INFO - SYSTEM READINESS REPORT
+2026-02-10 10:18:53,427 - gold.main - INFO - ============================================================
+2026-02-10 10:18:53,429 - gold.main - INFO - Timestamp: 2026-02-10T10:18:53.420544
+2026-02-10 10:18:53,433 - gold.main - INFO - Overall Status: READY
+2026-02-10 10:18:53,434 - gold.main - INFO - 
+2026-02-10 10:18:53,435 - gold.main - INFO - COMPONENTS:
+2026-02-10 10:18:53,436 - gold.main - INFO -   [READY] orchestrator: running
+2026-02-10 10:18:53,437 - gold.main - INFO -   [READY] ralph_wiggum_loop: running
+2026-02-10 10:18:53,438 - gold.main - INFO -   [NOT READY] mcp_servers: unknown
+2026-02-10 10:18:53,439 - gold.main - INFO - 
+2026-02-10 10:18:53,440 - gold.main - INFO - INTEGRATIONS:
+2026-02-10 10:18:53,441 - gold.main - INFO -   [NOT CONFIGURED] odoo
+2026-02-10 10:18:53,442 - gold.main - INFO -   [NOT CONFIGURED] facebook
+2026-02-10 10:18:53,444 - gold.main - INFO -   [NOT CONFIGURED] instagram
+2026-02-10 10:18:53,446 - gold.main - INFO -   [NOT CONFIGURED] twitter
+2026-02-10 10:18:53,449 - gold.main - INFO -   [NOT CONFIGURED] linkedin
+2026-02-10 10:18:53,450 - gold.main - INFO -   [NOT CONFIGURED] anthropic
+2026-02-10 10:18:53,451 - gold.main - INFO - 
+2026-02-10 10:18:53,452 - gold.main - INFO - RECOMMENDATIONS:
+2026-02-10 10:18:53,453 - gold.main - INFO -   - Configure Odoo integration to enable full functionality
+2026-02-10 10:18:53,454 - gold.main - INFO -   - Configure Facebook integration to enable full functionality
+2026-02-10 10:18:53,456 - gold.main - INFO -   - Configure Instagram integration to enable full functionality
+2026-02-10 10:18:53,457 - gold.main - INFO -   - Configure Twitter integration to enable full functionality
+2026-02-10 10:18:53,458 - gold.main - INFO -   - Configure Linkedin integration to enable full functionality
+2026-02-10 10:18:53,460 - gold.main - INFO -   - Configure Anthropic integration to enable full functionality
+2026-02-10 10:18:53,463 - gold.main - INFO - 
+2026-02-10 10:18:53,465 - gold.main - INFO - ============================================================
+2026-02-10 10:18:53,467 - gold.main - INFO - Report saved to: C:\personal-employee\Gold\reports\readiness_report.json
+2026-02-10 10:25:25,723 - gold.main - INFO - ============================================================
+2026-02-10 10:25:25,723 - gold.main - INFO - GOLD TIER AUTONOMOUS AI EMPLOYEE
+2026-02-10 10:25:25,724 - gold.main - INFO - ============================================================
+2026-02-10 10:25:25,724 - gold.main - INFO - Initializing components...
+2026-02-10 10:25:25,728 - gold.main - INFO - Initializing MCP servers...
+2026-02-10 10:25:25,729 - gold.main - INFO -   - Odoo MCP Server initialized
+2026-02-10 10:25:25,729 - gold.main - INFO -   - Social Media MCP Server initialized
+2026-02-10 10:25:25,730 - gold.main - INFO -   - Audit MCP Server initialized
+2026-02-10 10:25:25,730 - gold.main - INFO - Circuit breakers configured for external services
+2026-02-10 10:25:25,731 - gold.main - INFO - Registered 20 skills:
+2026-02-10 10:25:25,731 - gold.main - INFO -   - create_invoice (medium)
+2026-02-10 10:25:25,731 - gold.main - INFO -   - list_invoices (low)
+2026-02-10 10:25:25,731 - gold.main - INFO -   - record_expense (medium)
+2026-02-10 10:25:25,732 - gold.main - INFO -   - generate_financial_report (low)
+2026-02-10 10:25:25,732 - gold.main - INFO -   - reconcile_payments (high)
+2026-02-10 10:25:25,733 - gold.main - INFO -   - send_invoice (high)
+2026-02-10 10:25:25,734 - gold.main - INFO -   - post_to_facebook (medium)
+2026-02-10 10:25:25,735 - gold.main - INFO -   - post_to_instagram (medium)
+2026-02-10 10:25:25,738 - gold.main - INFO -   - post_to_twitter (medium)
+2026-02-10 10:25:25,742 - gold.main - INFO -   - post_to_linkedin (medium)
+2026-02-10 10:25:25,743 - gold.main - INFO -   - get_linkedin_analytics (low)
+2026-02-10 10:25:25,744 - gold.main - INFO -   - cross_post (medium)
+2026-02-10 10:25:25,745 - gold.main - INFO -   - get_social_analytics (low)
+2026-02-10 10:25:25,746 - gold.main - INFO -   - delete_social_post (high)
+2026-02-10 10:25:25,747 - gold.main - INFO -   - schedule_content (low)
+2026-02-10 10:25:25,748 - gold.main - INFO -   - run_weekly_audit (low)
+2026-02-10 10:25:25,749 - gold.main - INFO -   - generate_ceo_briefing (low)
+2026-02-10 10:25:25,750 - gold.main - INFO -   - compliance_check (low)
+2026-02-10 10:25:25,751 - gold.main - INFO -   - get_audit_logs (low)
+2026-02-10 10:25:25,754 - gold.main - INFO -   - system_health_check (low)
+2026-02-10 10:25:25,755 - gold.main - INFO - Initialization complete
+2026-02-10 10:25:25,758 - gold.main - INFO - Starting Gold Tier AI Employee...
+2026-02-10 10:25:25,759 - gold.gold_orchestrator - INFO - Starting Gold Tier Orchestrator...
+2026-02-10 10:25:25,761 - gold.ralph_wiggum_loop - INFO - Ralph Wiggum Loop started - I'm helping!
+2026-02-10 10:25:25,763 - gold.ralph_wiggum_loop - INFO - AUDIT: ralph_loop_started - success=True
+2026-02-10 10:25:25,766 - gold.gold_orchestrator - INFO - MCP server placeholders initialized
+2026-02-10 10:25:25,770 - gold.gold_orchestrator - INFO - AUDIT: orchestrator_started - success=True
+2026-02-10 10:25:25,774 - gold.gold_orchestrator - INFO - Gold Tier Orchestrator started successfully
+2026-02-10 10:25:25,776 - gold.main - INFO - Orchestrator started
+2026-02-10 10:25:28,097 - root - ERROR - Odoo RPC call failed: Cannot connect to host localhost:8069 ssl:default [The remote computer refused the network connection]
+2026-02-10 10:25:28,099 - gold.mcp.odoo_mcp - ERROR - Failed to connect to Odoo server
+2026-02-10 10:25:28,102 - gold.main - INFO - MCP Server 'odoo' started
+2026-02-10 10:25:28,105 - gold.mcp.social_mcp - INFO - Social Media MCP server started
+2026-02-10 10:25:28,105 - gold.main - INFO - MCP Server 'social' started
+2026-02-10 10:25:28,108 - gold.mcp.audit_mcp - INFO - Audit MCP server started
+2026-02-10 10:25:28,109 - gold.mcp.audit_mcp - INFO - Weekly audit scheduled for sunday at 9:00
+2026-02-10 10:25:28,110 - gold.main - INFO - MCP Server 'audit' started
+2026-02-10 10:25:28,114 - gold.main - INFO - Gold Tier AI Employee is now running
+2026-02-10 10:25:28,115 - gold.main - INFO - 
+2026-02-10 10:25:28,118 - gold.main - INFO - ============================================================
+2026-02-10 10:25:28,119 - gold.main - INFO - SYSTEM READINESS REPORT
+2026-02-10 10:25:28,119 - gold.main - INFO - ============================================================
+2026-02-10 10:25:28,120 - gold.main - INFO - Timestamp: 2026-02-10T10:25:28.115431
+2026-02-10 10:25:28,121 - gold.main - INFO - Overall Status: READY
+2026-02-10 10:25:28,122 - gold.main - INFO - 
+2026-02-10 10:25:28,123 - gold.main - INFO - COMPONENTS:
+2026-02-10 10:25:28,124 - gold.main - INFO -   [READY] orchestrator: running
+2026-02-10 10:25:28,126 - gold.main - INFO -   [READY] ralph_wiggum_loop: running
+2026-02-10 10:25:28,128 - gold.main - INFO -   [NOT READY] mcp_servers: unknown
+2026-02-10 10:25:28,131 - gold.main - INFO - 
+2026-02-10 10:25:28,132 - gold.main - INFO - INTEGRATIONS:
+2026-02-10 10:25:28,134 - gold.main - INFO -   [CONFIGURED] odoo
+2026-02-10 10:25:28,135 - gold.main - INFO -   [CONFIGURED] facebook
+2026-02-10 10:25:28,136 - gold.main - INFO -   [CONFIGURED] instagram
+2026-02-10 10:25:28,137 - gold.main - INFO -   [CONFIGURED] twitter
+2026-02-10 10:25:28,138 - gold.main - INFO -   [CONFIGURED] linkedin
+2026-02-10 10:25:28,139 - gold.main - INFO -   [CONFIGURED] anthropic
+2026-02-10 10:25:28,140 - gold.main - INFO - 
+2026-02-10 10:25:28,141 - gold.main - INFO - RECOMMENDATIONS:
+2026-02-10 10:25:28,142 - gold.main - INFO -   - All systems nominal. Continue monitoring.
+2026-02-10 10:25:28,147 - gold.main - INFO - 
+2026-02-10 10:25:28,148 - gold.main - INFO - ============================================================
+2026-02-10 10:25:28,152 - gold.main - INFO - Report saved to: C:\personal-employee\Gold\reports\readiness_report.json
