@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gold Tier AI Employee — Setup Guide</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* COVER PAGE */
+    .cover {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 40px;
+      page-break-after: always;
+    }
+
+    .cover-logo {
+      font-size: 64px;
+      margin-bottom: 24px;
+    }
+
+    .cover-badge {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #000;
+      padding: 6px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .cover h1 {
+      font-size: 52px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .cover h1 span {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cover-sub {
+      color: #aaa;
+      font-size: 18px;
+      max-width: 500px;
+      margin-bottom: 48px;
+    }
+
+    .cover-divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      border-radius: 2px;
+      margin: 0 auto 48px;
+    }
+
+    .cover-info {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .cover-info span { color: #FFD700; }
+
+    /* CONTENT */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* Section header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #FFD700;
+    }
+
+    .section-number {
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #000;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+
+    .section-title span {
+      color: #FFA500;
+    }
+
+    /* Welcome box */
+    .welcome-box {
+      background: #fffbeb;
+      border-left: 5px solid #FFD700;
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+
+    .welcome-box h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #92400e;
+    }
+
+    .welcome-box p { color: #78350f; }
+
+    /* Step card */
+    .step-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .step-card:hover { border-color: #FFD700; }
+
+    .step-num {
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #000;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 50px;
+      letter-spacing: 1px;
+    }
+
+    .step-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .step-card p { color: #555; margin-bottom: 12px; }
+
+    .step-card ul {
+      padding-left: 20px;
+      color: #555;
+    }
+
+    .step-card ul li { margin-bottom: 6px; }
+
+    /* Code block */
+    .code-block {
+      background: #1a1a2e;
+      color: #FFD700;
+      padding: 16px 20px;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    /* Info box */
+    .info-box {
+      background: #eff6ff;
+      border-left: 5px solid #3b82f6;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      color: #1e40af;
+      font-size: 14px;
+    }
+
+    .warning-box {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      color: #9a3412;
+      font-size: 14px;
+    }
+
+    /* Token guide table */
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .token-table th {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #000;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .token-table th:first-child { border-radius: 10px 0 0 0; }
+    .token-table th:last-child { border-radius: 0 10px 0 0; }
+
+    .token-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .token-table tr:nth-child(even) td { background: #f9fafb; }
+
+    .token-table a { color: #FFA500; text-decoration: none; font-weight: 600; }
+
+    /* Feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .feature-item {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .feature-item .icon { font-size: 28px; margin-bottom: 8px; }
+    .feature-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .feature-item p { font-size: 13px; color: #666; }
+
+    /* Commands */
+    .command {
+      background: #0a0a0a;
+      color: #28c840;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 15px;
+      margin: 12px 0;
+    }
+
+    .command::before { content: '$ '; color: #FFD700; }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .checklist li {
+      padding: 10px 16px;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .checklist li::before {
+      content: '☐';
+      font-size: 18px;
+      color: #FFD700;
+    }
+
+    /* Support section */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .support-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .support-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .support-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .support-card p { font-size: 13px; color: #666; }
+    .support-card a { color: #FFA500; text-decoration: none; font-weight: 600; }
+
+    /* Footer */
+    .guide-footer {
+      background: #0a0a0a;
+      color: #888;
+      text-align: center;
+      padding: 40px;
+      margin-top: 60px;
+      font-size: 13px;
+    }
+
+    .guide-footer span { color: #FFD700; }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 48px 0;
+    }
+
+    @media print {
+      .cover { page-break-after: always; }
+      .page { padding: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER PAGE -->
+  <div class="cover">
+    <div class="cover-logo">🤖</div>
+    <div class="cover-badge">Official Setup Guide</div>
+    <h1>Gold Tier<br/><span>AI Employee</span></h1>
+    <p class="cover-sub">Your complete guide to setting up your autonomous AI business assistant</p>
+    <div class="cover-divider"></div>
+    <div class="cover-info">
+      Version 1.0 &nbsp;•&nbsp; <span>Prepared by Imran Hassan</span> &nbsp;•&nbsp; 2026
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="page">
+
+    <!-- WELCOME -->
+    <div class="section-header">
+      <div class="section-number">👋</div>
+      <div class="section-title">Welcome to <span>Gold Tier AI Employee</span></div>
+    </div>
+
+    <div class="welcome-box">
+      <h3>Congratulations on your purchase!</h3>
+      <p>You now have access to a fully autonomous AI system that will handle your social media, accounting, and business reporting — 24 hours a day, 7 days a week, without any manual effort.</p>
+    </div>
+
+    <p style="color:#555; margin-bottom:16px;">This guide will walk you through the complete setup process step by step. The entire setup takes approximately <strong>15–20 minutes</strong>. Please read each step carefully before proceeding.</p>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="icon">📱</div>
+        <h4>Social Media Automation</h4>
+        <p>Auto-posts to Facebook, Instagram, Twitter & LinkedIn</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📊</div>
+        <h4>Accounting & Finance</h4>
+        <p>Invoice management, expense tracking & reports</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📋</div>
+        <h4>CEO Weekly Briefings</h4>
+        <p>Full business summary delivered every Sunday</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🤖</div>
+        <h4>Autonomous AI Agents</h4>
+        <p>Self-healing agents that plan, execute & retry tasks</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- REQUIREMENTS -->
+    <div class="section-header">
+      <div class="section-number">✅</div>
+      <div class="section-title">Before You <span>Begin</span></div>
+    </div>
+
+    <p style="color:#555; margin-bottom:20px;">Make sure you have the following ready before starting the setup:</p>
+
+    <ul class="checklist">
+      <li>A Windows PC or Laptop (Windows 10 or later)</li>
+      <li>Internet connection</li>
+      <li>Python installed (download from python.org — check "Add to PATH")</li>
+      <li>Facebook Business Page (with Admin access)</li>
+      <li>LinkedIn Account</li>
+      <li>Twitter/X Developer Account</li>
+      <li>Claude AI API Key (from console.anthropic.com)</li>
+    </ul>
+
+    <div class="info-box">
+      💡 <strong>Note:</strong> If you do not have API keys yet, do not worry — Step 3 of this guide explains exactly where to get each one.
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STEP 1 -->
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div class="section-title">Download the <span>System</span></div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 1</div>
+      <h3>Download from GitHub</h3>
+      <p>Go to the link below and download the system files to your computer.</p>
+      <div class="code-block">https://github.com/Imran-has/Gold-tier</div>
+      <br/>
+      <p>On the GitHub page:</p>
+      <ul>
+        <li>Click the green <strong>"Code"</strong> button</li>
+        <li>Click <strong>"Download ZIP"</strong></li>
+        <li>Save the ZIP file to your Desktop</li>
+        <li>Right-click the ZIP → <strong>"Extract All"</strong></li>
+        <li>Open the extracted folder <strong>"Gold-tier"</strong></li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STEP 2 -->
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div class="section-title">Run the <span>Setup Wizard</span></div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 2</div>
+      <h3>Double-click setup.bat</h3>
+      <p>Inside the Gold-tier folder, you will find a file called <strong>setup.bat</strong>.</p>
+      <ul>
+        <li>Double-click <strong>setup.bat</strong> to run it</li>
+        <li>A black window (Command Prompt) will open</li>
+        <li>It will automatically install all required packages</li>
+        <li>Then it will ask you to enter your account details one by one</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      ⚠️ <strong>Important:</strong> If Windows shows a security warning saying "Windows protected your PC", click <strong>"More info"</strong> then <strong>"Run anyway"</strong>. This is normal for new applications.
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STEP 3 -->
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div class="section-title">Get Your <span>API Keys</span></div>
+    </div>
+
+    <p style="color:#555; margin-bottom:20px;">During setup, the wizard will ask for the following API keys and tokens. Here is where to get each one:</p>
+
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>What You Need</th>
+          <th>Where to Get It</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🤖 Claude AI</td>
+          <td>API Key</td>
+          <td><a href="https://console.anthropic.com">console.anthropic.com</a> → API Keys</td>
+        </tr>
+        <tr>
+          <td>📘 Facebook</td>
+          <td>Access Token + Page ID</td>
+          <td><a href="https://developers.facebook.com">developers.facebook.com</a> → My Apps → Tools</td>
+        </tr>
+        <tr>
+          <td>📸 Instagram</td>
+          <td>Access Token + Account ID</td>
+          <td>Facebook Developer Dashboard → Instagram Basic Display</td>
+        </tr>
+        <tr>
+          <td>🐦 Twitter/X</td>
+          <td>API Key + Secret + Tokens</td>
+          <td><a href="https://developer.twitter.com">developer.twitter.com</a> → Projects & Apps</td>
+        </tr>
+        <tr>
+          <td>💼 LinkedIn</td>
+          <td>Access Token</td>
+          <td><a href="https://www.linkedin.com/developers">linkedin.com/developers</a> → My Apps</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      💡 <strong>Need help getting API keys?</strong> Contact support and we will guide you through the process via a 30-minute call at no extra charge.
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STEP 4 -->
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <div class="section-title">Start Your <span>AI Employee</span></div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 4</div>
+      <h3>Launch the System</h3>
+      <p>Once setup is complete, open Command Prompt inside your Gold-tier folder and run:</p>
+      <div class="command">python main.py</div>
+      <br/>
+      <p>You will see your AI Employee start up and display a system readiness report showing which platforms are connected and ready.</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">TEST</div>
+      <h3>Test Your Connections</h3>
+      <p>To verify everything is working correctly, run:</p>
+      <div class="command">python test_connections.py</div>
+      <br/>
+      <p>You should see green checkmarks next to each platform confirming successful connections.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STEP 5 -->
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <div class="section-title">Daily <span>Usage</span></div>
+    </div>
+
+    <p style="color:#555; margin-bottom:20px;">Once the system is running, here is what happens automatically:</p>
+
+    <ul class="checklist">
+      <li>Every morning — AI posts content to all your social media platforms</li>
+      <li>Every week — Full financial report is generated and saved</li>
+      <li>Every Sunday at 9AM — CEO briefing report is created</li>
+      <li>Whenever a task fails — AI retries automatically up to 3 times</li>
+      <li>All activity is logged — Full audit trail available in the logs folder</li>
+    </ul>
+
+    <div class="info-box">
+      💡 <strong>Pro Tip:</strong> Keep the system running in the background on your PC. For best results, ensure your computer stays on and connected to the internet.
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SUPPORT -->
+    <div class="section-header">
+      <div class="section-number">📞</div>
+      <div class="section-title">Support & <span>Contact</span></div>
+    </div>
+
+    <p style="color:#555; margin-bottom:24px;">We are here to help you get the most out of your AI Employee. Reach out anytime:</p>
+
+    <div class="support-grid">
+      <div class="support-card">
+        <div class="icon">📧</div>
+        <h4>Email Support</h4>
+        <p>Get a response within 24 hours</p>
+        <a href="mailto:imranhassankhanzada@gmail.com">imranhassankhanzada@gmail.com</a>
+      </div>
+      <div class="support-card">
+        <div class="icon">💼</div>
+        <h4>LinkedIn</h4>
+        <p>Message directly on LinkedIn</p>
+        <a href="https://linkedin.com/in/imran-hassan">Imran Hassan</a>
+      </div>
+      <div class="support-card">
+        <div class="icon">💻</div>
+        <h4>GitHub</h4>
+        <p>Report issues or get updates</p>
+        <a href="https://github.com/Imran-has/Gold-tier">Gold-tier Repository</a>
+      </div>
+      <div class="support-card">
+        <div class="icon">🎥</div>
+        <h4>Free Setup Call</h4>
+        <p>30-minute guided setup session</p>
+        <a href="mailto:imranhassankhanzada@gmail.com">Book via Email</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="guide-footer">
+    <p>© 2026 <span>Gold Tier AI Employee</span> — All Rights Reserved</p>
+    <p style="margin-top:8px;">Built with ❤️ by <span>Imran Hassan</span> &nbsp;•&nbsp; Powered by Claude AI (Anthropic) & Python</p>
+  </div>
+
+</body>
+</html>
