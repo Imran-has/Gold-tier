@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gold Tier AI Employee — Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .badge {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #000;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 22px);
+      color: #aaa;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-gold {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #000;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255,215,0,0.4);
+    }
+
+    .btn-outline {
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,215,0,0.1);
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      padding: 60px 20px;
+      background: #111;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .stat { text-align: center; }
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label { color: #888; font-size: 14px; margin-top: 4px; }
+
+    /* FEATURES */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-title span {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #888;
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: #FFD700;
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      color: #888;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* DEMO TERMINAL */
+    .terminal-section {
+      background: #0d0d0d;
+      padding: 80px 20px;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .terminal {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .terminal-header {
+      background: #2a2a2a;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #febc2e; }
+    .dot-green { background: #28c840; }
+
+    .terminal-title {
+      color: #888;
+      font-size: 13px;
+      margin-left: 8px;
+    }
+
+    .terminal-body {
+      padding: 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .t-gold { color: #FFD700; }
+    .t-green { color: #28c840; }
+    .t-blue { color: #58a6ff; }
+    .t-gray { color: #888; }
+    .t-white { color: #fff; }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .pricing-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+
+    .pricing-card.popular {
+      border-color: #FFD700;
+      position: relative;
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 50px;
+    }
+
+    .pricing-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .pricing-price {
+      font-size: 52px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .pricing-period { color: #888; font-size: 14px; margin-bottom: 24px; }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .pricing-features li {
+      color: #ccc;
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .pricing-features li::before {
+      content: '✓ ';
+      color: #FFD700;
+      font-weight: 700;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      color: #888;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .contact-item {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .contact-item a { color: #FFD700; text-decoration: none; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #444;
+      font-size: 13px;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">🏆 Gold Tier AI Employee</div>
+    <h1>Your Business,<br/>Running on <span>Autopilot</span></h1>
+    <p>An autonomous AI employee that handles your social media, accounting, and business reporting — 24/7, without breaks.</p>
+    <div class="hero-btns">
+      <a href="#demo" class="btn-gold">See Live Demo</a>
+      <a href="#pricing" class="btn-outline">View Pricing</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">4+</div>
+      <div class="stat-label">Social Platforms</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Always Running</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">60+</div>
+      <div class="stat-label">Automated Tasks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Human Effort Needed</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <h2 class="section-title">Everything Your Business <span>Needs</span></h2>
+    <p class="section-sub">One AI system. Multiple capabilities. Zero overhead.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">Social Media Automation</div>
+        <div class="feature-desc">Automatically posts to Facebook, Instagram, Twitter/X, and LinkedIn. Schedules content, tracks analytics, and engages your audience — all without you lifting a finger.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Accounting & Finance</div>
+        <div class="feature-desc">Integrated with Odoo ERP. Creates invoices, tracks expenses, records income, and generates financial reports automatically every week.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">CEO Weekly Briefings</div>
+        <div class="feature-desc">Every Sunday, you receive a complete business report: social performance, financial summary, compliance check, and recommendations — delivered to your inbox.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">Autonomous AI Agents</div>
+        <div class="feature-desc">The Ralph Wiggum Loop engine plans, executes, verifies, and retries tasks on its own. If something fails, it fixes itself and keeps going.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">Risk Management</div>
+        <div class="feature-desc">Every action is categorized by risk level (Low, Medium, High, Critical). High-risk actions require your approval before execution. Your data stays safe.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <div class="feature-title">Analytics & Insights</div>
+        <div class="feature-desc">Real-time analytics across all platforms. Understand what's working, what's not, and let the AI optimize your strategy automatically.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMINAL DEMO -->
+  <section class="terminal-section" id="demo">
+    <h2 class="section-title" style="text-align:center; margin-bottom: 12px;">Watch It Work in <span style="background: linear-gradient(90deg, #FFD700, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Real Time</span></h2>
+    <p class="section-sub">This is what happens every morning at 9AM — automatically.</p>
+
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span class="terminal-title">Gold Tier AI Employee — Live Output</span>
+      </div>
+      <div class="terminal-body">
+        <div class="t-gold">============================================================</div>
+        <div class="t-gold">      GOLD TIER AUTONOMOUS AI EMPLOYEE — STARTING</div>
+        <div class="t-gold">============================================================</div>
+        <br/>
+        <div><span class="t-green">[OK]</span> <span class="t-white">Odoo Accounting: Connected</span></div>
+        <div><span class="t-green">[OK]</span> <span class="t-white">Facebook: Configured</span></div>
+        <div><span class="t-green">[OK]</span> <span class="t-white">Instagram: Configured</span></div>
+        <div><span class="t-green">[OK]</span> <span class="t-white">Twitter/X: Configured</span></div>
+        <div><span class="t-green">[OK]</span> <span class="t-white">LinkedIn: Configured</span></div>
+        <br/>
+        <div class="t-blue">► Running morning social media posts...</div>
+        <div><span class="t-green">✅ Posted</span> to Facebook — 1 post published</div>
+        <div><span class="t-green">✅ Posted</span> to Instagram — 1 post published</div>
+        <div><span class="t-green">✅ Posted</span> to Twitter/X — 1 tweet published</div>
+        <div><span class="t-green">✅ Posted</span> to LinkedIn — 1 post published</div>
+        <br/>
+        <div class="t-blue">► Generating weekly financial report...</div>
+        <div><span class="t-green">✅ Report</span> saved: reports/audits/week_2026_03.pdf</div>
+        <br/>
+        <div class="t-blue">► Sending CEO briefing...</div>
+        <div><span class="t-green">✅ Briefing</span> delivered to: CEO</div>
+        <br/>
+        <div class="t-gold">All tasks completed. Next run: tomorrow 09:00 AM</div>
+        <div class="t-gray">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <h2 class="section-title">Simple, <span>Transparent</span> Pricing</h2>
+    <p class="section-sub">No hidden fees. Cancel anytime.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Basic</div>
+        <div class="pricing-price">$100</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li>Social Media Automation</li>
+          <li>Facebook + Instagram</li>
+          <li>10 posts per week</li>
+          <li>Monthly Analytics Report</li>
+          <li>Email Support</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="display:inline-block">Get Started</a>
+      </div>
+
+      <div class="pricing-card popular">
+        <div class="popular-badge">MOST POPULAR</div>
+        <div class="pricing-name">Standard</div>
+        <div class="pricing-price">$200</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li>All Basic Features</li>
+          <li>All 4 Social Platforms</li>
+          <li>Unlimited Posts</li>
+          <li>Weekly CEO Briefing</li>
+          <li>Accounting Reports</li>
+          <li>Priority Support</li>
+        </ul>
+        <a href="#contact" class="btn-gold" style="display:inline-block">Get Started</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-name">Gold</div>
+        <div class="pricing-price">$400</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li>All Standard Features</li>
+          <li>Full Odoo Accounting</li>
+          <li>Invoice Management</li>
+          <li>Autonomous AI Agents</li>
+          <li>Custom Integrations</li>
+          <li>24/7 Dedicated Support</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="display:inline-block">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <h2>Ready to <span style="background: linear-gradient(90deg, #FFD700, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Automate</span> Your Business?</h2>
+    <p>Get a free demo tailored to your business. No commitment required.</p>
+    <a href="mailto:imranhassankhanzada@gmail.com" class="btn-gold">Book Free Demo</a>
+
+    <div class="contact-info">
+      <div class="contact-item">📧 <a href="mailto:imranhassankhanzada@gmail.com">imranhassankhanzada@gmail.com</a></div>
+      <div class="contact-item">💼 <a href="https://www.linkedin.com/in/imran-hassan" target="_blank">LinkedIn</a></div>
+      <div class="contact-item">💻 <a href="https://github.com/Imran-has/Gold-tier" target="_blank">GitHub</a></div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Gold Tier AI Employee. Built with Claude AI & Python.
+  </footer>
+
+</body>
+</html>
